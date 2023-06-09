@@ -24,6 +24,9 @@ namespace PartyManager.Dados.Arquivo.Compartilhado
                     CarregarArquivoJson();
           }
 
+          /// <summary>
+          /// Grava os registros do tipo string, em um arquivo Json.
+          /// </summary>
           public void GravarArquivoJson()
           {
                JsonSerializerOptions configuracoes = ConfigurarSerializadorJson();
@@ -33,6 +36,9 @@ namespace PartyManager.Dados.Arquivo.Compartilhado
                File.WriteAllText(CAMINHO_ARQUIVO, registrosJson);
           }
 
+          /// <summary>
+          /// Pegar os registros de um arquivo Json e atribui para dentro das listas.
+          /// </summary>
           private void CarregarArquivoJson()
           {
                JsonSerializerOptions configuracoes = ConfigurarSerializadorJson();
@@ -52,6 +58,10 @@ namespace PartyManager.Dados.Arquivo.Compartilhado
                }
           }
 
+          /// <summary>
+          /// Configura algumas opções do serializador Json. 
+          /// </summary>
+          /// <returns>Retorna uma classe com as opções definidas.</returns>
           private static JsonSerializerOptions ConfigurarSerializadorJson()
           {
                JsonSerializerOptions configuracoes = new JsonSerializerOptions();
