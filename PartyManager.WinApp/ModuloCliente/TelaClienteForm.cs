@@ -37,12 +37,19 @@ namespace PartyManager.WinApp.ModuloCliente
 
                string[] erros = cliente.ValidarErros();
 
+               if (!mtboxTelefone.MaskFull)
+               {
+                    Array.Resize(ref erros, erros.Length + 1);
+                    erros[erros.Length - 1] = "Campo \"Telefone\" está incompleto!";
+               }
+
                if (erros.Length > 0)
                {
                     TelaPrincipalForm.Instancia.AtualizarRodape(erros[0], TipoStatusEnum.Erro);
 
                     DialogResult = DialogResult.None;
                }
+
           }
      }
 }
