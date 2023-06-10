@@ -4,7 +4,7 @@
      {
           void Inserir(Cliente novoCliente);
           void Editar(int id, Cliente cliente);
-          void Excluir(Cliente clienteSelecionado);
+          void Deletar(Cliente clienteSelecionado);
           List<Cliente> SelecionarTodos();
           Cliente SelecionarPorId(int id);
      }

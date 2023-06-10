@@ -10,8 +10,4 @@
     <ProjectReference Include="..\PartyManager.Dominio\PartyManager.Dominio.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ModuloCliente\" />
-  </ItemGroup>
-
 </Project>
