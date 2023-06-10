@@ -40,6 +40,7 @@ namespace PartyManager.WinApp.ModuloCliente
                     repoCliente.Deletar(cliente);
                }
                CarregarClientes();
+               TelaPrincipalForm.Instancia.AtualizarRodape($"Cliente deletado com sucesso!", TipoStatusEnum.Sucesso);
           }
 
           private Cliente ObterClienteSelecionado()
@@ -73,6 +74,7 @@ namespace PartyManager.WinApp.ModuloCliente
                     repoCliente.Editar(clienteAtualizado.id, clienteAtualizado);
                }
                CarregarClientes();
+               TelaPrincipalForm.Instancia.AtualizarRodape($"Cliente editado com sucesso!", TipoStatusEnum.Sucesso);
           }
 
           public override void Inserir()
@@ -89,6 +91,7 @@ namespace PartyManager.WinApp.ModuloCliente
                }
 
                CarregarClientes();
+               TelaPrincipalForm.Instancia.AtualizarRodape($"Cliente inserido com sucesso!", TipoStatusEnum.Sucesso);
           }
 
           private void CarregarClientes()

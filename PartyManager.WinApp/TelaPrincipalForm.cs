@@ -1,4 +1,7 @@
 using PartyManager.Dados.Arquivo.Compartilhado;
+using PartyManager.Dados.Arquivo.ModuloCliente;
+using PartyManager.Dominio.ModuloCliente;
+using PartyManager.WinApp.ModuloCliente;
 
 namespace PartyManager.WinApp
 {
@@ -7,6 +10,7 @@ namespace PartyManager.WinApp
           private int contadorTemporizador = 5;
           private ControladorBase controlador;
           private static ContextoDados contexto = new ContextoDados(carregarDados: true);
+          private IRepositorioCliente repositorioCliente = new RepositorioClienteArquivo(contexto);
 
           /*
           Implementar instâncias dos repositorios
@@ -165,7 +169,8 @@ namespace PartyManager.WinApp
 
           private void clientesMenuItem_Click(object sender, EventArgs e)
           {
-               throw new NotImplementedException();
+               controlador = new ControladorCliente(repositorioCliente);
+               ConfigurarTelaPrincipal(controlador);
           }
      }
 }
