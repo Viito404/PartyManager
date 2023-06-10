@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ModuloCliente\" />
+    <ProjectReference Include="..\PartyManager.Dados.Arquivo\PartyManager.Dados.Arquivo.csproj" />
   </ItemGroup>
 
 </Project>
