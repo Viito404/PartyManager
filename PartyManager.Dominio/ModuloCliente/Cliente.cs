@@ -17,6 +17,12 @@ namespace PartyManager.Dominio.ModuloCliente
                this.nome = nome;
                this.telefone = telefone;
           }
+          public Cliente(int id, string nome, string telefone)
+          {
+               this.id = id;
+               this.nome = nome;
+               this.telefone = telefone;
+          }
 
           public override void AtualizarRegistros(Cliente registroAtualizado)
           {
@@ -29,12 +35,20 @@ namespace PartyManager.Dominio.ModuloCliente
                List<string> erros = new List<string>();
 
                if (string.IsNullOrEmpty(nome))
-                    erros.Add("Campo \"Nome\" está vazio!");
+                    erros.Add("Campo \"Nome\" é obrigatório!");
 
                if (telefone == "(  )     -")
-                    erros.Add("Campo \"Telefone\" está vazio!");
+                    erros.Add("Campo \"Telefone\"é obrigatório!");
 
                return erros.ToArray();
+          }
+
+          public override bool Equals(object? obj)
+          {
+               return obj is Cliente cliente &&
+                      id == cliente.id &&
+                      nome == cliente.nome &&
+                      telefone == cliente.telefone;
           }
      }
 }
