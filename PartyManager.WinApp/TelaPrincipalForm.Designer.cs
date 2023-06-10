@@ -81,7 +81,7 @@
                // clientesMenuItem
                // 
                clientesMenuItem.Name = "clientesMenuItem";
-               clientesMenuItem.Size = new Size(116, 22);
+               clientesMenuItem.Size = new Size(180, 22);
                clientesMenuItem.Text = "Clientes";
                clientesMenuItem.Click += clientesMenuItem_Click;
                // 
@@ -119,7 +119,7 @@
                btnEditar.Padding = new Padding(7);
                btnEditar.Size = new Size(42, 42);
                btnEditar.Text = "toolStripButton1";
-               btnEditar.ToolTipText = "Inserir";
+               btnEditar.ToolTipText = "Editar";
                btnEditar.Click += btnEditar_Click;
                // 
                // btnDeletar
@@ -133,7 +133,7 @@
                btnDeletar.Padding = new Padding(7);
                btnDeletar.Size = new Size(42, 42);
                btnDeletar.Text = "toolStripButton1";
-               btnDeletar.ToolTipText = "Inserir";
+               btnDeletar.ToolTipText = "Deletar";
                btnDeletar.Click += btnDeletar_Click;
                // 
                // tslTipoCadastros
