@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using PartyManager.Dominio.ModuloCliente;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace PartyManager.Dados.Arquivo.Compartilhado
@@ -7,12 +8,16 @@ namespace PartyManager.Dados.Arquivo.Compartilhado
      {
           private const string CAMINHO_ARQUIVO = "Compartilhado\\PartyManager.json";
 
+          public List<Cliente> clientes;
+
           /*
           Implementar listas das entidades
           */
 
           public ContextoDados()
           {
+               clientes = new List<Cliente>();
+
                /*
                Instanciar listas das entidades
                */
@@ -51,6 +56,7 @@ namespace PartyManager.Dados.Arquivo.Compartilhado
                     {
                          ContextoDados dadosJson = JsonSerializer.Deserialize<ContextoDados>(registrosJson, configuracoes);
 
+                         clientes = dadosJson.clientes;
                          /*
                          Fazer listas receberem os dados de "dadosJson" 
                          */

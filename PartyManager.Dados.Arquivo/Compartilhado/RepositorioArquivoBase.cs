@@ -20,7 +20,7 @@
           /// <summary>
           /// Verifica se há registros, e se houver, atribui a variável "contador" a maior id existente desses registros. 
           /// </summary>
-          private void AtualizarContador()
+          public void AtualizarContador()
           {
                if (ObterRegistros().Count > 0)
                     contador = ObterRegistros().Max(x => x.id);
@@ -72,7 +72,7 @@
           /// </summary>
           /// <param name="id"></param>
           /// <returns></returns>
-          private TEntidade SelecionarPorId(int id)
+          public TEntidade SelecionarPorId(int id)
           {
                List<TEntidade> registros = ObterRegistros();
 
