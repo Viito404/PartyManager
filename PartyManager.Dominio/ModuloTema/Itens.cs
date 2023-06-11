@@ -6,6 +6,15 @@ namespace PartyManager.Dominio.ModuloTema
         public string nome;
         public decimal valor;
 
+        public Itens()
+        {
+        }
+
+        public Itens(string nome, decimal valor)
+        {
+            this.nome = nome;
+            this.valor = valor;
+        }
 
         public override void AtualizarRegistros(Itens registroAtualizado)
         {

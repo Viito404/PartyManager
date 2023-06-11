@@ -21,12 +21,54 @@ namespace PartyManager.WinApp.ModuloTema
 
         public override void Deletar()
         {
-            throw new NotImplementedException();
+            Tema temaSelecionado = ObterTemaSelecionado();
+
+            if (temaSelecionado == null)
+            {
+                MessageBox.Show($"Selecione um tema primeiro!",
+                    "Exclusão de Temas",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+
+                return;
+            }
+
+            DialogResult opcaoEscolhida = MessageBox.Show($"Deseja excluir o cliente {temaSelecionado.nome}?", "Exclusão de Temas",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if (opcaoEscolhida == DialogResult.OK)
+            {
+                repoTema.Deletar(temaSelecionado);
+            }
+            CarregarTemas();
+            TelaPrincipalForm.Instancia.AtualizarRodape($"Tema deletado com sucesso!", TipoStatusEnum.Sucesso);
         }
 
         public override void Editar()
         {
-            throw new NotImplementedException();
+            TelaTemaForm telaTema = new TelaTemaForm();
+            Tema temaSelecionado = ObterTemaSelecionado();
+
+            if (temaSelecionado == null)
+            {
+                MessageBox.Show($"Selecione um tema primeiro!",
+                    "Edição de Temas",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+                return;
+            }
+
+
+            telaTema.ConfigurarTela(temaSelecionado);
+
+            if (telaTema.ShowDialog() == DialogResult.OK)
+            {
+                Tema temaAtualizado = telaTema.ObterTema();
+                repoTema.Editar(temaAtualizado.id, temaAtualizado);
+            }
+            CarregarTemas();
+            TelaPrincipalForm.Instancia.AtualizarRodape($"Tema editado com sucesso!", TipoStatusEnum.Sucesso);
+
         }
 
         public override void Inserir()
@@ -35,7 +77,12 @@ namespace PartyManager.WinApp.ModuloTema
 
             if (telaTema.ShowDialog() == DialogResult.OK)
             {
+                Tema novoTema = telaTema.ObterTema();
+                repoTema.Inserir(novoTema);
             }
+
+            CarregarTemas();
+            TelaPrincipalForm.Instancia.AtualizarRodape($"Tema inserido com sucesso!", TipoStatusEnum.Sucesso);
         }
 
         private Tema ObterTemaSelecionado()
