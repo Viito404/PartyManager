@@ -125,6 +125,7 @@ namespace PartyManager.WinApp
             btnInserir.Enabled = controlador.InserirHabilitado;
             btnEditar.Enabled = controlador.EditarHabilitado;
             btnDeletar.Enabled = controlador.DeletarHabilitado;
+            btnAdicionarItem.Enabled = controlador.AdicionarItemHabilitado;
         }
 
         /// <summary>
@@ -181,6 +182,11 @@ namespace PartyManager.WinApp
         {
             controlador = new ControladorTema(repositorioTema);
             ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void btnAdicionarItem_Click(object sender, EventArgs e)
+        {
+            controlador.AdicionarItem();
         }
     }
 }

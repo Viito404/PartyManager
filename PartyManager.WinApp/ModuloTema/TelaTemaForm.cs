@@ -16,8 +16,6 @@ namespace PartyManager.WinApp.ModuloTema
             int id = Convert.ToInt32(tboxId.Text);
             string nome = tboxNome.Text;
 
-            // pegar itens selecionado no tema.
-
             Tema tema = new Tema(id, nome);
 
             if (id > 0)

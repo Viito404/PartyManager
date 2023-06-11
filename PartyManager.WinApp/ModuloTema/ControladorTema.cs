@@ -19,6 +19,7 @@ namespace PartyManager.WinApp.ModuloTema
 
         public override string ToolTipDeletar => "Deletar Tema";
 
+        public override bool AdicionarItemHabilitado { get { return true; } }
         public override void Deletar()
         {
             Tema temaSelecionado = ObterTemaSelecionado();
@@ -69,6 +70,28 @@ namespace PartyManager.WinApp.ModuloTema
             CarregarTemas();
             TelaPrincipalForm.Instancia.AtualizarRodape($"Tema editado com sucesso!", TipoStatusEnum.Sucesso);
 
+        }
+
+        public override void AdicionarItem()
+        {
+            Tema temaSelecionado = ObterTemaSelecionado();
+
+            if (temaSelecionado == null)
+            {
+                MessageBox.Show($"Selecione um tema primeiro!",
+                    "Edição de Temas",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            TelaItensForm telaItens = new TelaItensForm();
+
+            if (telaItens.ShowDialog() == DialogResult.OK)
+            {
+                List<Item> itens = telaItens.ObterListaItens();
+                temaSelecionado.AtribuirItensTema(itens);
+            }
         }
 
         public override void Inserir()

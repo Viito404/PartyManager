@@ -1,22 +1,23 @@
 ﻿
 namespace PartyManager.Dominio.ModuloTema
 {
-    public class Itens : EntidadeBase<Itens>
+    public class Item : EntidadeBase<Item>
     {
         public string nome;
         public decimal valor;
 
-        public Itens()
+        public Item()
         {
         }
 
-        public Itens(string nome, decimal valor)
+        public Item(int id, string nome, decimal valor)
         {
+            this.id = id;
             this.nome = nome;
             this.valor = valor;
         }
 
-        public override void AtualizarRegistros(Itens registroAtualizado)
+        public override void AtualizarRegistros(Item registroAtualizado)
         {
             nome = registroAtualizado.nome;
             valor = registroAtualizado.valor;

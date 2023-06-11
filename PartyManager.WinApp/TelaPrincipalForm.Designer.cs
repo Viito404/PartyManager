@@ -40,6 +40,9 @@
             btnInserir = new ToolStripButton();
             btnEditar = new ToolStripButton();
             btnDeletar = new ToolStripButton();
+            toolStripSeparator1 = new ToolStripSeparator();
+            btnAdicionarItem = new ToolStripButton();
+            toolStripSeparator2 = new ToolStripSeparator();
             tslTipoCadastros = new ToolStripLabel();
             panelRegistros = new Panel();
             temporizador = new System.Windows.Forms.Timer(components);
@@ -86,21 +89,21 @@
             // clientesMenuItem
             // 
             clientesMenuItem.Name = "clientesMenuItem";
-            clientesMenuItem.Size = new Size(224, 26);
+            clientesMenuItem.Size = new Size(144, 26);
             clientesMenuItem.Text = "Clientes";
             clientesMenuItem.Click += clientesMenuItem_Click;
             // 
             // temasToolStripMenuItem
             // 
             temasToolStripMenuItem.Name = "temasToolStripMenuItem";
-            temasToolStripMenuItem.Size = new Size(224, 26);
+            temasToolStripMenuItem.Size = new Size(144, 26);
             temasToolStripMenuItem.Text = "Temas";
             temasToolStripMenuItem.Click += temasMenuItem_Click;
             // 
             // toolStrip1
             // 
             toolStrip1.ImageScalingSize = new Size(20, 20);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { btnInserir, btnEditar, btnDeletar, tslTipoCadastros });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { btnInserir, btnEditar, btnDeletar, toolStripSeparator1, btnAdicionarItem, toolStripSeparator2, tslTipoCadastros });
             toolStrip1.Location = new Point(0, 30);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(810, 45);
@@ -148,6 +151,27 @@
             btnDeletar.Text = "toolStripButton1";
             btnDeletar.ToolTipText = "Deletar";
             btnDeletar.Click += btnDeletar_Click;
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(6, 45);
+            // 
+            // btnAdicionarItem
+            // 
+            btnAdicionarItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnAdicionarItem.Enabled = false;
+            btnAdicionarItem.Image = Properties.Resources.add_itens_icon;
+            btnAdicionarItem.ImageTransparentColor = Color.Magenta;
+            btnAdicionarItem.Name = "btnAdicionarItem";
+            btnAdicionarItem.Size = new Size(29, 42);
+            btnAdicionarItem.Text = "Adicionar item";
+            btnAdicionarItem.Click += btnAdicionarItem_Click;
+            // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(6, 45);
             // 
             // tslTipoCadastros
             // 
@@ -208,5 +232,8 @@
         private Panel panelRegistros;
         private System.Windows.Forms.Timer temporizador;
         private ToolStripMenuItem temasToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripButton btnAdicionarItem;
+        private ToolStripSeparator toolStripSeparator2;
     }
 }

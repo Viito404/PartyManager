@@ -13,7 +13,6 @@ namespace PartyManager.Dados.Arquivo.Compartilhado
 
         public List<Tema> temas;
 
-
         /*
         Implementar listas das entidades
         */
@@ -62,6 +61,7 @@ namespace PartyManager.Dados.Arquivo.Compartilhado
                     ContextoDados dadosJson = JsonSerializer.Deserialize<ContextoDados>(registrosJson, configuracoes);
 
                     clientes = dadosJson.clientes;
+                    temas = dadosJson.temas;
                     /*
                     Fazer listas receberem os dados de "dadosJson" 
                     */

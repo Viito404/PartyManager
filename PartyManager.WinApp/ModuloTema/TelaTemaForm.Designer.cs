@@ -34,7 +34,6 @@
             label2 = new Label();
             tboxId = new TextBox();
             label1 = new Label();
-            clbItens = new CheckedListBox();
             SuspendLayout();
             // 
             // btnCadastrar
@@ -43,7 +42,7 @@
             btnCadastrar.BackColor = SystemColors.ButtonHighlight;
             btnCadastrar.DialogResult = DialogResult.OK;
             btnCadastrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCadastrar.Location = new Point(368, 412);
+            btnCadastrar.Location = new Point(355, 229);
             btnCadastrar.Margin = new Padding(3, 4, 3, 4);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(86, 60);
@@ -58,7 +57,7 @@
             btnCancelar.BackColor = SystemColors.ButtonHighlight;
             btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancelar.Location = new Point(461, 412);
+            btnCancelar.Location = new Point(448, 229);
             btnCancelar.Margin = new Padding(3, 4, 3, 4);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(86, 60);
@@ -69,7 +68,7 @@
             // tboxNome
             // 
             tboxNome.Anchor = AnchorStyles.None;
-            tboxNome.Location = new Point(168, 121);
+            tboxNome.Location = new Point(155, 153);
             tboxNome.Margin = new Padding(3, 4, 3, 4);
             tboxNome.Name = "tboxNome";
             tboxNome.Size = new Size(286, 27);
@@ -80,7 +79,7 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(119, 125);
+            label2.Location = new Point(106, 157);
             label2.Name = "label2";
             label2.Size = new Size(52, 20);
             label2.TabIndex = 27;
@@ -91,7 +90,7 @@
             tboxId.Anchor = AnchorStyles.None;
             tboxId.BackColor = SystemColors.ActiveBorder;
             tboxId.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            tboxId.Location = new Point(268, 55);
+            tboxId.Location = new Point(269, 96);
             tboxId.Margin = new Padding(3, 4, 3, 4);
             tboxId.Name = "tboxId";
             tboxId.ReadOnly = true;
@@ -104,26 +103,17 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(240, 59);
+            label1.Location = new Point(241, 100);
             label1.Name = "label1";
             label1.Size = new Size(28, 20);
             label1.TabIndex = 25;
             label1.Text = "Nº";
             // 
-            // clbItens
-            // 
-            clbItens.FormattingEnabled = true;
-            clbItens.Location = new Point(119, 165);
-            clbItens.Name = "clbItens";
-            clbItens.Size = new Size(335, 224);
-            clbItens.TabIndex = 29;
-            // 
             // TelaTemaForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(559, 485);
-            Controls.Add(clbItens);
+            ClientSize = new Size(559, 342);
             Controls.Add(tboxNome);
             Controls.Add(label2);
             Controls.Add(tboxId);
@@ -145,6 +135,5 @@
         private Label label2;
         private TextBox tboxId;
         private Label label1;
-        private CheckedListBox clbItens;
     }
 }
