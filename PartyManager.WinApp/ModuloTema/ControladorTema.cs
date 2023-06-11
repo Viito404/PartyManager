@@ -31,10 +31,14 @@ namespace PartyManager.WinApp.ModuloTema
 
         public override void Inserir()
         {
-            throw new NotImplementedException();
+            TelaTemaForm telaTema = new TelaTemaForm();
+
+            if (telaTema.ShowDialog() == DialogResult.OK)
+            {
+            }
         }
 
-        private Tema ObterClienteSelecionado()
+        private Tema ObterTemaSelecionado()
         {
             int id = tabelaTema.ObterIdSelecionado();
             return repoTema.SelecionarPorId(id);
