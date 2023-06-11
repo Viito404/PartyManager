@@ -1,4 +1,5 @@
 ﻿
+using System.Drawing;
 using PartyManager.Dominio.ModuloTema;
 
 namespace PartyManager.WinApp.ModuloTema
@@ -11,7 +12,15 @@ namespace PartyManager.WinApp.ModuloTema
             InitializeComponent();
             this.ConfigurarDialog();
         }      
+        public void PopularListaDeItens(int id, List<Item> itensCadastrados)
+        {
+            tboxId.Text =  id.ToString();
 
+            foreach(Item itemTema in itensCadastrados)
+            {
+                ListBoxItens.Items.Add($"Item: {itemTema.nome} - Valor: {itemTema.valor}"); 
+            }
+        }
         public List<Item> ObterListaItens()
         {
             return ListaItens;

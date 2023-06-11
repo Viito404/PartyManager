@@ -76,6 +76,7 @@ namespace PartyManager.WinApp.ModuloTema
         {
             Tema temaSelecionado = ObterTemaSelecionado();
 
+
             if (temaSelecionado == null)
             {
                 MessageBox.Show($"Selecione um tema primeiro!",
@@ -86,12 +87,17 @@ namespace PartyManager.WinApp.ModuloTema
             }
 
             TelaItensForm telaItens = new TelaItensForm();
+            telaItens.PopularListaDeItens(temaSelecionado.id, temaSelecionado.ListaItens);
 
             if (telaItens.ShowDialog() == DialogResult.OK)
             {
                 List<Item> itens = telaItens.ObterListaItens();
                 temaSelecionado.AtribuirItensTema(itens);
+                temaSelecionado.CalcularPrecoTotal();
             }
+
+            repoTema.Editar(temaSelecionado.id, temaSelecionado);
+            CarregarTemas();
         }
 
         public override void Inserir()

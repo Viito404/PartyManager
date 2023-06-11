@@ -28,6 +28,16 @@ namespace PartyManager.Dominio.ModuloTema
             nome = registroAtualizado.nome;
         }
 
+        public void CalcularPrecoTotal()
+        {
+            foreach(Item itemTema in ListaItens)
+            {
+                valorTotalItens += itemTema.valor;
+            }
+
+
+        }
+
         public override string[] ValidarErros()
         {
             List<string> ErrosTema = new List<string>();
