@@ -73,9 +73,10 @@ namespace PartyManager.WinApp.ModuloFesta
             {
                 Festa festaAtualizado = telaFesta.ObterFesta();
                 repoFesta.Editar(festaAtualizado.id, festaAtualizado);
+                TelaPrincipalForm.Instancia.AtualizarRodape($"Festa editada com sucesso!", TipoStatusEnum.Sucesso);
             }
             CarregarFestas();
-            TelaPrincipalForm.Instancia.AtualizarRodape($"Festa editada com sucesso!", TipoStatusEnum.Sucesso);
+            
         }
 
         public override void Inserir()
@@ -86,10 +87,11 @@ namespace PartyManager.WinApp.ModuloFesta
             {
                 Festa novaFesta = telaFesta.ObterFesta();
                 repoFesta.Inserir(novaFesta);
+                TelaPrincipalForm.Instancia.AtualizarRodape($"Festas inserida com sucesso!", TipoStatusEnum.Sucesso);
             }
 
             CarregarFestas();
-            TelaPrincipalForm.Instancia.AtualizarRodape($"Festas inserida com sucesso!", TipoStatusEnum.Sucesso);
+            
         }
         private void CarregarFestas()
         {
