@@ -1,4 +1,5 @@
 ﻿using PartyManager.Dominio.ModuloCliente;
+using PartyManager.Dominio.ModuloFesta;
 using PartyManager.Dominio.ModuloTema;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -12,6 +13,7 @@ namespace PartyManager.Dados.Arquivo.Compartilhado
         public List<Cliente> clientes;
 
         public List<Tema> temas;
+        public List<Festa> festas;
 
         /*
         Implementar listas das entidades
@@ -21,6 +23,7 @@ namespace PartyManager.Dados.Arquivo.Compartilhado
         {
             clientes = new List<Cliente>();
             temas = new List<Tema>();
+            festas = new List<Festa>();
 
             /*
             Instanciar listas das entidades
@@ -62,6 +65,7 @@ namespace PartyManager.Dados.Arquivo.Compartilhado
 
                     clientes = dadosJson.clientes;
                     temas = dadosJson.temas;
+                    festas = dadosJson.festas;
                     /*
                     Fazer listas receberem os dados de "dadosJson" 
                     */
