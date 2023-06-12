@@ -6,7 +6,6 @@ namespace PartyManager.Dominio.ModuloCliente
      {
           public string nome { get; set;}
           public string telefone;
-          public int contadorFestas = 0;
 
           public Cliente()
           {
@@ -49,8 +48,7 @@ namespace PartyManager.Dominio.ModuloCliente
                return obj is Cliente cliente &&
                       id == cliente.id &&
                       nome == cliente.nome &&
-                      telefone == cliente.telefone &&
-                      contadorFestas == cliente.contadorFestas;  
+                      telefone == cliente.telefone;
           }
      }
 }
